@@ -1,0 +1,2 @@
+allow rmt_storage firmware_file:dir search;
+allow rmt_storage firmware_file:file r_file_perms;
