@@ -138,11 +138,7 @@ PRODUCT_PACKAGES += \
     Tag \
     com.android.nfc_extras
 
-ifeq ($(TARGET_BUILD_VARIANT),user)
-    PRODUCT_COPY_FILES += $(LOCAL_PATH)/configs/nfcee_access.xml:system/etc/nfcee_access.xml
-else
-    PRODUCT_COPY_FILES += $(LOCAL_PATH)/configs/nfcee_access_debug.xml:system/etc/nfcee_access.xml
-endif
+PRODUCT_COPY_FILES += $(LOCAL_PATH)/configs/nfcee_access_debug.xml:system/etc/nfcee_access.xml
 
 # OMX
 PRODUCT_PACKAGES += \
