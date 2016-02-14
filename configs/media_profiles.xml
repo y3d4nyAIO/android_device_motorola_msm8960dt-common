@@ -50,7 +50,7 @@
 <!ELEMENT EncoderOutputFileFormat EMPTY>
 <!ATTLIST EncoderOutputFileFormat name (mp4|3gp) #REQUIRED>
 <!ELEMENT VideoEncoderCap EMPTY>
-<!ATTLIST VideoEncoderCap name (h264|h263|m4v|wmv) #REQUIRED>
+<!ATTLIST VideoEncoderCap name (h265|h264|h263|m4v|wmv) #REQUIRED>
 <!ATTLIST VideoEncoderCap enabled (true|false) #REQUIRED>
 <!ATTLIST VideoEncoderCap minBitRate CDATA #REQUIRED>
 <!ATTLIST VideoEncoderCap maxBitRate CDATA #REQUIRED>
@@ -325,6 +325,14 @@
          In other words, the applications won't be able to use the codec
          or query the capabilities of the codec at all if it is disabled
     -->
+    <VideoEncoderCap name="h265" enabled="true"
+        minBitRate="64000" maxBitRate="100000000"
+        minFrameWidth="176" maxFrameWidth="19020"
+        minFrameHeight="144" maxFrameHeight="1080"
+        minFrameRate="15" maxFrameRate="30"
+        maxHFRFrameWidth="0" maxHFRFrameHeight="0"
+        maxHFRMode="0"  />
+
     <VideoEncoderCap name="h264" enabled="true"
         minBitRate="64000" maxBitRate="20000000"
         minFrameWidth="176" maxFrameWidth="1920"
