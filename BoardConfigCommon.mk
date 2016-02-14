@@ -53,6 +53,9 @@ TARGET_KERNEL_SOURCE := kernel/motorola/ghost
 TARGET_KERNEL_CONFIG := msm8960dt_mmi_defconfig
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-linux-androideabi-
 
+# ANT+
+BOARD_ANT_WIRELESS_DEVICE := "qualcomm-smd"
+
 WLAN_MODULES:
 	mkdir -p $(KERNEL_MODULES_OUT)/prima
 	mv $(KERNEL_MODULES_OUT)/wlan.ko $(KERNEL_MODULES_OUT)/prima/prima_wlan.ko
