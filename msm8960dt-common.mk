@@ -149,6 +149,7 @@ PRODUCT_COPY_FILES += $(LOCAL_PATH)/configs/nfcee_access_debug.xml:system/etc/nf
 
 # OMX
 PRODUCT_PACKAGES += \
+    libOmxCore \
     libOmxVdec \
     libOmxVenc \
     libOmxAacEnc \
