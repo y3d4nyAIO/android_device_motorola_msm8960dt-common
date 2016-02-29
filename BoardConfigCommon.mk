@@ -123,3 +123,13 @@ BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_qcwcn
 WIFI_DRIVER_MODULE_NAME		 := "wlan"
 WIFI_DRIVER_MODULE_PATH 	 := "/system/lib/modules/wlan.ko"
 WPA_SUPPLICANT_VERSION 		 := VER_0_8_X
+
+# Basic dexpreopt
+ifeq ($(HOST_OS),linux)
+  ifneq ($(TARGET_BUILD_VARIANT),eng)
+    ifeq ($(WITH_DEXPREOPT),)
+      WITH_DEXPREOPT := true
+      WITH_DEXPREOPT_BOOT_IMG_ONLY := true
+    endif
+  endif
+endif
