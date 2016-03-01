@@ -31,7 +31,7 @@
 /system/etc/init\.qcom\.bt\.sh                                                      u:object_r:bluetooth_loader_exec:s0
 
 # bootmodem
-/system/bin/bootmodem                                                               u:object_r:bootmodem_exec:s0
+#/system/bin/bootmodem                                                               u:object_r:bootmodem_exec:s0
 
 # Camera
 /data/cam_socket([0-9])+                                                            u:object_r:camera_socket:s0
@@ -48,11 +48,10 @@
 /system/etc/init\.mmi\.boot\.sh                                                     u:object_r:mmi_boot_exec:s0
 
 # Partitions
-/dev/block/platform/msm_sdcc.1/by-name/cid                                          u:object_r:cid_block_device:s0
-/dev/block/platform/msm_sdcc.1/by-name/clogo                                        u:object_r:clogo_block_device:s0
-/dev/block/platform/msm_sdcc.1/by-name/dhob                                         u:object_r:hob_block_device:s0
-/dev/block/platform/msm_sdcc.1/by-name/hob                                          u:object_r:hob_block_device:s0
-/dev/block/platform/msm_sdcc.1/by-name/utags                                        u:object_r:utags_block_device:s0
+#/dev/block/platform/msm_sdcc.1/by-name/cid                                          u:object_r:cid_block_device:s0
+#/dev/block/platform/msm_sdcc.1/by-name/clogo                                        u:object_r:clogo_block_device:s0
+#/dev/block/platform/msm_sdcc.1/by-name/dhob                                         u:object_r:hob_block_device:s0
+#/dev/block/platform/msm_sdcc.1/by-name/hob                                          u:object_r:hob_block_device:s0
 
 # PDS
 /pds(/.*)?                                                                          u:object_r:pds_file:s0
