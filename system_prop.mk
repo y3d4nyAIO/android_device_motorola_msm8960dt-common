@@ -115,3 +115,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.disableWifiApFirmwareReload=true \
     wifi.interface=wlan0
+    
+#3310195 is sum of supported format flags in AAL
+#Formats: AVI AC3 ASF AAC QCP DTS 3G2 FLAC DIVX DIVXHD
+PRODUCT_PROPERTY_OVERRIDES += \
+    mm.enable.qcom_parser=3310195
