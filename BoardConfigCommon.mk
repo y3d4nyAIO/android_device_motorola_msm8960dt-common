@@ -44,7 +44,7 @@ TARGET_GLOBAL_CPPFLAGS 		+= -mfpu=neon-vfpv4 -mfloat-abi=hard
 
 # Kernel
 BOARD_CUSTOM_BOOTIMG_MK 	   := $(LOCAL_PATH)/mkbootimg.mk
-BOARD_KERNEL_CMDLINE 		   := console=ttyHSL0,115200,n8 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3 androidboot.write_protect=0 androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE 		   := console=ttyHSL0,115200,n8 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3 androidboot.write_protect=0
 BOARD_KERNEL_BASE 		   := 0x80200000
 BOARD_KERNEL_PAGESIZE 		   := 2048
 BOARD_KERNEL_SEPARATED_DT	   := true
