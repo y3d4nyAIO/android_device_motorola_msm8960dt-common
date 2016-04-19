@@ -1,3 +1,4 @@
+# Copyright (C) 2016 The XPerience Project
 LOCAL_PATH:= $(call my-dir)
 
 # Configuration scripts
