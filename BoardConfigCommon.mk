@@ -104,6 +104,9 @@ TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/fstab.qcom
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
+# Properties
+TARGET_SYSTEM_PROP += device/motorola/msm8960dt-common/system.prop
+
 # RIL
 BOARD_RIL_CLASS := ../../../$(LOCAL_PATH)/ril/
 
