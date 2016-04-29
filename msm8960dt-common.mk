@@ -98,6 +98,10 @@ PRODUCT_PACKAGES += \
     libshim_ril \
     libstlport
 
+# Gello
+PRODUCT_PACKAGES += \
+    Gello
+
 # Display
 PRODUCT_PACKAGES += \
     copybit.msm8960 \
