@@ -35,7 +35,7 @@
 /system/etc/init\.qcom\.bt\.sh                                                      u:object_r:bluetooth_loader_exec:s0
 
 # bootmodem
-#/system/bin/bootmodem                                                               u:object_r:bootmodem_exec:s0
+/system/bin/bootmodem                                                               u:object_r:bootmodem_exec:s0
 
 # Camera
 /data/cam_socket([0-9])+                                                            u:object_r:camera_socket:s0
