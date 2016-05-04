@@ -56,6 +56,8 @@ persist.rild.nitz_short_ons_3=""
 ro.vendor.extension_library=/system/lib/libqc-opt.so
 
 # Radio
+rild.libargs=-d /dev/smd0
+rild.libpath=/system/lib/libril-qc-qmi-1.so
 persist.radio.apm_sim_not_pwdn=1
 persist.radio.dfr_mode_set=1
 persist.radio.eons.enabled=1
@@ -90,3 +92,7 @@ wifi.interface=wlan0
 #3310195 is sum of supported format flags in AAL
 #Formats: AVI AC3 ASF AAC QCP DTS 3G2 FLAC DIVX DIVXHD
 mm.enable.qcom_parser=3310195
+
+#Enable multiwindow
+persist.sys.debug.multi_window=true
+
