@@ -76,7 +76,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     AntHalService \
     com.dsi.ant.antradio_library \
-    libantradio
+    libantradio \
+    antradio_app
 
 # Audio configuration
 PRODUCT_COPY_FILES += \
