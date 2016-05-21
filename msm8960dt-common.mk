@@ -109,6 +109,7 @@ PRODUCT_PACKAGES += \
     gralloc.msm8960 \
     hwcomposer.msm8960 \
     libgenlock \
+	libI420colorconvert \
     memtrack.msm8960
 
 # Doze mode
@@ -151,13 +152,16 @@ PRODUCT_COPY_FILES += $(LOCAL_PATH)/configs/nfcee_access_debug.xml:system/etc/nf
 
 # OMX
 PRODUCT_PACKAGES += \
-    libOmxCore \
-    libOmxVdec \
-    libOmxVenc \
     libOmxAacEnc \
     libOmxAmrEnc \
+    libOmxCore \
     libOmxEvrcEnc \
     libOmxQcelp13Enc \
+    libc2dcolorconvert \	
+    libOmxVdec \
+    libOmxVenc \
+    libdivxdrmdecrypt \
+    libmm-omxcore \
     libstagefrighthw
 
 # Power HAL
