@@ -476,6 +476,7 @@ service mmi-touch-sh /system/bin/sh /init.mmi.touch.sh
     disabled
 
 service mpdecision /system/bin/mpdecision --avg_comp
+	class main
     user root
     group root system
     disabled
