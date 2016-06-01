@@ -152,17 +152,16 @@ PRODUCT_COPY_FILES += $(LOCAL_PATH)/configs/nfcee_access_debug.xml:system/etc/nf
 
 # OMX
 PRODUCT_PACKAGES += \
-    libOmxAacEnc \
-    libOmxAmrEnc \
-    libOmxCore \
-    libOmxEvrcEnc \
-    libOmxQcelp13Enc \
-    libc2dcolorconvert \
-    libOmxVdec \
-    libOmxVenc \
     libdivxdrmdecrypt \
     libmm-omxcore \
-    libstagefrighthw
+    libOmxCore \
+    libstagefrighthw \
+    libOmxVdec \
+    libOmxVenc \
+    libOmxAacEnc \
+    libOmxAmrEnc \
+    libOmxEvrcEnc \
+    libOmxQcelp13Enc
 
 # Power HAL
 PRODUCT_PACKAGES += \
