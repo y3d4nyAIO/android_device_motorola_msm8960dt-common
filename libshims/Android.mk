@@ -4,10 +4,18 @@ LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
 
-LOCAL_SRC_FILES := \
-    gui/SensorManager.cpp
+LOCAL_C_INCLUDES += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include
+LOCAL_ADDITIONAL_DEPENDENCIES := $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
 
-LOCAL_SHARED_LIBRARIES := libutils libgui liblog libbinder
+LOCAL_SRC_FILES := \
+    gui/SensorManager.cpp \
+    ui/GraphicBuffer.cpp \
+    ui/GraphicBufferAllocator.cpp \
+    ui/GraphicBufferMapper.cpp
+
+LOCAL_SHARED_LIBRARIES := \
+    libbinder libcutils libgui libhardware liblog libsync libui libutils
+
 LOCAL_MODULE := libshim_camera
 LOCAL_MODULE_TAGS := optional
 
