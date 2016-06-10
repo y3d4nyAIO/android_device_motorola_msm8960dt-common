@@ -470,6 +470,9 @@ service_redefine ril-daemon /system/bin/rild
 on property:sys.boot_completed=1
     start mmi-touch-sh
 
+    # Temp hack to fix torch not being registered on boot
+    restart media
+
 service mmi-touch-sh /system/bin/sh /init.mmi.touch.sh
     user root
     oneshot
