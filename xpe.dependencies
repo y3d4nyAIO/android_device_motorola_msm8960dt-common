@@ -12,7 +12,11 @@
     "target_path": "device/qcom/common"
   },
   {
-    "repository": "android_kernel_motorola_ghost",
+    "repository": "Cyanogenmod/android_kernel_motorola_ghost",
     "target_path": "kernel/motorola/ghost"
+  },
+  {
+    "repository": "TheMuppets/proprietary_vendor_motorola",
+    "target_path": "vendor/motorola"
   }
 ]
