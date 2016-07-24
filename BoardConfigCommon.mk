@@ -129,15 +129,12 @@ WIFI_DRIVER_MODULE_PATH 	 := "/system/lib/modules/wlan.ko"
 WPA_SUPPLICANT_VERSION 		 := VER_0_8_X
 
 # Basic dexpreopt
-# Enable dex-preoptimization to speed up first boot sequence
+# Basic dexpreopt
 ifeq ($(HOST_OS),linux)
-  ifeq ($(WITH_DEXPREOPT),)
-    WITH_DEXPREOPT := true
-    WITH_DEXPREOPT_PIC := true
-    WITH_DEXPREOPT_BOOT_IMG_ONLY := false
-    ifneq ($(TARGET_BUILD_VARIANT),user)
-      # Retain classes.dex in APK's for non-user builds
-      DEX_PREOPT_DEFAULT := nostripping
-    endif
-  endif
+   ifneq ($(TARGET_BUILD_VARIANT),eng)
+      ifeq ($(WITH_DEXPREOPT),)
+        WITH_DEXPREOPT := true
+        WITH_DEXPREOPT_BOOT_IMG_ONLY := true
+      endif
+   endif
 endif
