@@ -86,7 +86,8 @@ PRODUCT_COPY_FILES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    camera.msm8960
+    camera.msm8960 \
+	Snap
 
 # Compat
 PRODUCT_PACKAGES += \
@@ -108,7 +109,6 @@ PRODUCT_PACKAGES += \
     gralloc.msm8960 \
     hwcomposer.msm8960 \
     libgenlock \
-    libI420colorconvert \
     memtrack.msm8960
 
 # Doze mode
@@ -150,16 +150,14 @@ PRODUCT_COPY_FILES += $(LOCAL_PATH)/configs/nfcee_access_debug.xml:system/etc/nf
 
 # OMX
 PRODUCT_PACKAGES += \
-    libdivxdrmdecrypt \
-    libmm-omxcore \
     libOmxCore \
-    libstagefrighthw \
     libOmxVdec \
     libOmxVenc \
     libOmxAacEnc \
     libOmxAmrEnc \
     libOmxEvrcEnc \
-    libOmxQcelp13Enc
+    libOmxQcelp13Enc \
+    libstagefrighthw
 
 # Power HAL
 PRODUCT_PACKAGES += \
