@@ -136,8 +136,8 @@ PRODUCT_COPY_FILES += \
 
 # Audio config
 PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/rootdir/system/etc/audio_effects.conf:system/vendor/etc/audio_effects.conf \
-    $(COMMON_PATH)/rootdir/system/etc/audio_platform_info.xml:system/etc/audio_platform_info.xml
+    $(LOCAL_PATH)/configs/audio_effects.conf:system/vendor/etc/audio_effects.conf \
+    $(LOCAL_PATH)/configs/audio_platform_info.xml:system/etc/audio_platform_info.xml
  
 # Motorola
 PRODUCT_PACKAGES += \
