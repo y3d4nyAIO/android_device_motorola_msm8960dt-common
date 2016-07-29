@@ -2,13 +2,11 @@
 dalvik.vm.dex2oat-swap=false
 
 # Audio
-lpa.decode=true
-persist.audio.fluence.mode=endfire
-persist.audio.handset.mic=digital
 persist.audio.vr.enable=false
-qcom.hw.aac.encoder=true
-ro.qc.sdk.audio.fluencetype=fluence
-ro.qc.sdk.audio.ssr=false
+persist.audio.fluence.voicecall=true
+persist.audio.fluence.voicerec=false
+persist.audio.fluence.speaker=true
+ro.qc.sdk.audio.fluencetype=none
 
 # Bluetooth
 qcom.bt.le_dev_pwr_class=1
@@ -26,6 +24,10 @@ ro.qualcomm.bluetooth.pbap=true
 
 # Camera
 camera2.portability.force_api=1
+persist.camera.cpp.duplication=false
+ro.qc.sdk.sensors.gestures=true
+ro.qc.sdk.gestures.camera=false
+ro.qc.sdk.camera.facialproc=false
 
 # Display
 persist.hwc.mdpcomp.enable=true

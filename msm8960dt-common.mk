@@ -66,7 +66,8 @@ PRODUCT_PACKAGES += \
     audio.primary.msm8960 \
     audio.r_submix.default \
     audio.usb.default \
-    libaudio-resampler
+    libaudio-resampler \
+	libqcomvoiceprocessing \
 
 PRODUCT_PACKAGES += \
     mbhc.bin \
@@ -133,6 +134,11 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml
 
+# Audio config
+PRODUCT_COPY_FILES += \
+    $(COMMON_PATH)/rootdir/system/etc/audio_effects.conf:system/vendor/etc/audio_effects.conf \
+    $(COMMON_PATH)/rootdir/system/etc/audio_platform_info.xml:system/etc/audio_platform_info.xml
+ 
 # Motorola
 PRODUCT_PACKAGES += \
     charge_only_mode
