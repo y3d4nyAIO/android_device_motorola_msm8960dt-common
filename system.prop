@@ -8,7 +8,7 @@ persist.audio.fluence.voicerec=false
 persist.audio.fluence.speaker=true
 ro.qc.sdk.audio.fluencetype=none
 audio.offload.disable=1
-qcom.hw.aac.encoder=true
+qcom.hw.aac.encoder=false
 mm.enable.smoothstreaming=true
 
 # Bluetooth
