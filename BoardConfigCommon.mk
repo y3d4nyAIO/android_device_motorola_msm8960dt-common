@@ -74,6 +74,7 @@ USE_CUSTOM_AUDIO_POLICY				:= 1
 BACKLIGHT_PATH :=/sys/class/backlight/lcd-backlight/brightness
 BOARD_CHARGER_ENABLE_SUSPEND := true
 BOARD_NO_CHARGER_LED := true
+BOARD_CHARGER_DISABLE_INIT_BLANK := true
 
 
 # Bluetooth
