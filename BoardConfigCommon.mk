@@ -70,6 +70,12 @@ BOARD_USES_LEGACY_ALSA_AUDIO 	    := true
 AUDIO_USE_LL_AS_PRIMARY_OUTPUT 		:= true
 USE_CUSTOM_AUDIO_POLICY				:= 1
 
+#Charger
+BACKLIGHT_PATH :=/sys/class/backlight/lcd-backlight/brightness
+BOARD_CHARGER_ENABLE_SUSPEND := true
+BOARD_NO_CHARGER_LED := true
+
+
 # Bluetooth
 BOARD_HAVE_BLUETOOTH 	  := true
 BOARD_HAVE_BLUETOOTH_QCOM := true

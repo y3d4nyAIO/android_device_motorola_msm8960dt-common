@@ -671,7 +671,7 @@ on start-charging
     start batt_health
     start charge_only_mode
 
-service charge_only_mode /system/bin/charge_only_mode
-    user root
-    group graphics system input
-    disabled
+service charger /charger
+    class charger
+    group log
+    seclabel u:r:healthd:s0

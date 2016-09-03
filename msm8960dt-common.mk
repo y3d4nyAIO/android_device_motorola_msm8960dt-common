@@ -142,10 +142,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio_effects.conf:system/vendor/etc/audio_effects.conf \
     $(LOCAL_PATH)/configs/audio_platform_info.xml:system/etc/audio_platform_info.xml
- 
-# Motorola
-PRODUCT_PACKAGES += \
-    charge_only_mode
 
 # NFC
 PRODUCT_PACKAGES += \
