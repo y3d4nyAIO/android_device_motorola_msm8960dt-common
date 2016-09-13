@@ -39,8 +39,6 @@ on enable-low-power
     write /sys/module/cpu_boost/parameters/input_boost_freq 1458000
     write /sys/module/cpu_boost/parameters/input_boost_ms 40
 
-	start mpdecision
-	
 on charger
     # Enable Power modes
     write /sys/module/rpm_resources/enable_low_power/L2_cache 1

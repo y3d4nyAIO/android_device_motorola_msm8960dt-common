@@ -11,9 +11,6 @@ type sysfs_batt_health, fs_type, sysfs_type;
 # Charge only mode
 type charge_only_mode_data_file, file_type, data_file_type;
 
-#FSG
-type fsg_file, fs_type, contextmount_type;
-
 # PDS
 type pds_file, file_type;
 

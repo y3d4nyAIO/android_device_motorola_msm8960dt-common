@@ -23,7 +23,6 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
 # Permissions
 PRODUCT_COPY_FILES += \
-    external/ant-wireless/antradio-library/com.dsi.ant.antradio_library.xml:system/etc/permissions/com.dsi.ant.antradio_library.xml \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:system/etc/permissions/android.hardware.audio.low_latency.xml \
     frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml \
     frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
@@ -50,6 +49,9 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/com.nxp.mifare.xml:system/etc/permissions/com.nxp.mifare.xml \
     frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml
 
+# System Properties
+include $(LOCAL_PATH)/system_prop.mk
+
 # Screen density
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
@@ -67,28 +69,23 @@ PRODUCT_PACKAGES += \
     audio.r_submix.default \
     audio.usb.default \
     libaudio-resampler \
-	libqcomvoiceprocessing \
+	libqcomvoiceprocessing
+
+# Audio config
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/audio_effects.conf:system/vendor/etc/audio_effects.conf \
+    $(LOCAL_PATH)/configs/audio_policy.conf:system/etc/audio_policy.conf \
+    $(LOCAL_PATH)/configs/audio_platform_info.xml:system/etc/audio_platform_info.xml \
+    $(LOCAL_PATH)/configs/snd_soc_msm_2x:system/etc/snd_soc_msm/snd_soc_msm_2x
 
 PRODUCT_PACKAGES += \
     mbhc.bin \
     wcd9310_anc.bin
 
-# ANT+
-PRODUCT_PACKAGES += \
-    AntHalService \
-    com.dsi.ant.antradio_library \
-    libantradio \
-    antradio_app
-
-# Audio configuration
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/audio_policy.conf:system/etc/audio_policy.conf \
-    $(LOCAL_PATH)/configs/snd_soc_msm_2x:system/etc/snd_soc_msm/snd_soc_msm_2x
-
 # Camera
 PRODUCT_PACKAGES += \
     camera.msm8960 \
-	Snap
+    Snap
 
 # Compat
 PRODUCT_PACKAGES += \
@@ -99,10 +96,6 @@ PRODUCT_PACKAGES += \
     libshim_qcopt \
     libshim_ril \
     libstlport
-
-# Gello
-PRODUCT_PACKAGES += \
-    Gello
 
 # Display
 PRODUCT_PACKAGES += \
@@ -116,6 +109,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libjni_motoSensor \
     MotoDoze
+
+# Gello
+PRODUCT_PACKAGES += \
+    Gello
 
 # IRSC
 PRODUCT_COPY_FILES += \
@@ -134,11 +131,6 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml
 
-# Audio config
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/audio_effects.conf:system/vendor/etc/audio_effects.conf \
-    $(LOCAL_PATH)/configs/audio_platform_info.xml:system/etc/audio_platform_info.xml
-
 # NFC
 PRODUCT_PACKAGES += \
     libnfc \
@@ -148,7 +140,11 @@ PRODUCT_PACKAGES += \
     Tag \
     com.android.nfc_extras
 
-PRODUCT_COPY_FILES += $(LOCAL_PATH)/configs/nfcee_access_debug.xml:system/etc/nfcee_access.xml
+ifeq ($(TARGET_BUILD_VARIANT),user)
+    PRODUCT_COPY_FILES += $(LOCAL_PATH)/configs/nfcee_access.xml:system/etc/nfcee_access.xml
+else
+    PRODUCT_COPY_FILES += $(LOCAL_PATH)/configs/nfcee_access_debug.xml:system/etc/nfcee_access.xml
+endif
 
 # OMX
 PRODUCT_PACKAGES += \
