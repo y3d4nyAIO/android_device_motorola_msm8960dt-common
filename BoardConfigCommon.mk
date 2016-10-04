@@ -23,20 +23,20 @@ BOARD_VENDOR := motorola-qcom
 TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
 
 # Platform
-TARGET_BOARD_PLATFORM := msm8960
-TARGET_BOARD_PLATFORM_GPU := qcom-adreno320
+TARGET_BOARD_PLATFORM       := msm8960
+TARGET_BOARD_PLATFORM_GPU   := qcom-adreno320
 
 # Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := MSM8960
-TARGET_NO_BOOTLOADER := true
+TARGET_BOOTLOADER_BOARD_NAME    := MSM8960
+TARGET_NO_BOOTLOADER            := true
 
 # Architecture
-TARGET_ARCH := arm
-TARGET_ARCH_VARIANT := armv7-a-neon
-TARGET_CPU_ABI := armeabi-v7a
-TARGET_CPU_ABI2 := armeabi
-TARGET_CPU_VARIANT := krait
-TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
+TARGET_ARCH                             := arm
+TARGET_ARCH_VARIANT                     := armv7-a-neon
+TARGET_CPU_ABI                          := armeabi-v7a
+TARGET_CPU_ABI2                         := armeabi
+TARGET_CPU_VARIANT                      := krait
+TARGET_USE_QCOM_BIONIC_OPTIMIZATION     := true
 
 # Kernel
 BOARD_CUSTOM_BOOTIMG_MK    := $(LOCAL_PATH)/mkbootimg.mk
@@ -65,10 +65,10 @@ QCOM_MULTI_VOICE_SESSION_ENABLED    := true
 #BLUETOOTH_HCI_USE_MCT       := true
 
 #Charger
-BACKLIGHT_PATH :=/sys/class/backlight/lcd-backlight/brightness
-BOARD_CHARGER_ENABLE_SUSPEND := true
-BOARD_NO_CHARGER_LED := true
-BOARD_CHARGER_DISABLE_INIT_BLANK := true
+BACKLIGHT_PATH                      :=/sys/class/backlight/lcd-backlight/brightness
+BOARD_CHARGER_ENABLE_SUSPEND        := true
+BOARD_NO_CHARGER_LED                := true
+BOARD_CHARGER_DISABLE_INIT_BLANK    := true
 
 # Camera
 USE_DEVICE_SPECIFIC_CAMERA  := true
@@ -91,11 +91,11 @@ TARGET_POWERHAL_VARIANT := qcom
 BOARD_USES_QCOM_HARDWARE := true
 
 # Recovery
-TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/fstab.qcom
-TARGET_USERIMAGES_USE_EXT4 := true
-TARGET_USERIMAGES_USE_F2FS := true
-TARGET_RECOVERY_DENSITY := xhdpi
-TARGET_NOT_USE_GZIP_RECOVERY_RAMDISK := true
+TARGET_RECOVERY_FSTAB                   := $(LOCAL_PATH)/rootdir/etc/fstab.qcom
+TARGET_USERIMAGES_USE_EXT4              := true
+TARGET_USERIMAGES_USE_F2FS              := true
+TARGET_RECOVERY_DENSITY                 := xhdpi
+TARGET_NOT_USE_GZIP_RECOVERY_RAMDISK    := true
 
 # RIL
 BOARD_RIL_CLASS := ../../../$(LOCAL_PATH)/ril/
@@ -119,26 +119,23 @@ WIFI_DRIVER_FW_PATH_STA             := "sta"
 WPA_SUPPLICANT_VERSION              := VER_0_8_X
 
 #TWRP
-BOARD_HAS_NO_REAL_SDCARD := true
-RECOVERY_SDCARD_ON_DATA := true
-TARGET_RECOVERY_PIXEL_FORMAT := "RGB_565"
-#TW_ALWAYS_RMRF := true
-# Enable workaround for slow rom flash
-#COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
-TW_EXTERNAL_STORAGE_PATH := "/usb-otg"
-TW_EXTERNAL_STORAGE_MOUNT_POINT := "usb-otg"
-DEVICE_RESOLUTION := 720x1280
-RECOVERY_GRAPHICS_USE_LINELENGTH := true
-BOARD_SUPPRESS_SECURE_ERASE := true
-TW_INCLUDE_CRYPTO := true
-TW_INCLUDE_L_CRYPTO := true
-TW_TARGET_USES_QCOM_BSP := true
-TW_DEFAULT_EXTERNAL_STORAGE := true
-TW_EXCLUDE_SUPERSU := true
-TW_INCLUDE_CRYPTO := true
-TW_INCLUDE_NTFS_3G := true
-TW_INTERNAL_STORAGE_MOUNT_POINT := "data"
-TW_INTERNAL_STORAGE_PATH := "/data/media"
-TW_NO_SCREEN_BLANK := true
-TW_NO_USB_STORAGE := true
-TW_THEME := portrait_hdpi
+BOARD_HAS_NO_REAL_SDCARD            := true
+RECOVERY_SDCARD_ON_DATA             := true
+TARGET_RECOVERY_PIXEL_FORMAT        := "RGB_565"
+TW_EXTERNAL_STORAGE_PATH            := "/usb-otg"
+TW_EXTERNAL_STORAGE_MOUNT_POINT     := "usb-otg"
+DEVICE_RESOLUTION                   := 720x1280
+RECOVERY_GRAPHICS_USE_LINELENGTH    := true
+BOARD_SUPPRESS_SECURE_ERASE         := true
+TW_INCLUDE_CRYPTO                   := true
+TW_INCLUDE_L_CRYPTO                 := true
+TW_TARGET_USES_QCOM_BSP             := true
+TW_DEFAULT_EXTERNAL_STORAGE         := true
+TW_EXCLUDE_SUPERSU                  := true
+TW_INCLUDE_CRYPTO                   := true
+TW_INCLUDE_NTFS_3G                  := true
+TW_INTERNAL_STORAGE_MOUNT_POINT     := "data"
+TW_INTERNAL_STORAGE_PATH            := "/data/media"
+TW_NO_SCREEN_BLANK                  := true
+TW_NO_USB_STORAGE                   := true
+TW_THEME                            := portrait_hdpi
