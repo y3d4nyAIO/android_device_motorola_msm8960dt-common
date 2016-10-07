@@ -40,7 +40,7 @@ TARGET_USE_QCOM_BIONIC_OPTIMIZATION     := true
 
 # Kernel
 BOARD_CUSTOM_BOOTIMG_MK    := $(LOCAL_PATH)/mkbootimg.mk
-BOARD_KERNEL_CMDLINE       := console=ttyHSL0,115200,n8 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3 maxcpus=2 androidboot.write_protect=0
+BOARD_KERNEL_CMDLINE       := console=ttyHSL0,115200,n8 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3 maxcpus=2 androidboot.write_protect=0 androidboot.selinux=permissive
 BOARD_KERNEL_BASE          := 0x80200000
 BOARD_KERNEL_PAGESIZE      := 2048
 BOARD_KERNEL_SEPARATED_DT  := true
@@ -60,9 +60,9 @@ USE_LEGACY_AUDIO_POLICY             := true
 QCOM_MULTI_VOICE_SESSION_ENABLED    := true
 
 # Bluetooth
-#BOARD_HAVE_BLUETOOTH        := true
-#BOARD_HAVE_BLUETOOTH_QCOM   := true
-#BLUETOOTH_HCI_USE_MCT       := true
+BOARD_HAVE_BLUETOOTH        := true
+BOARD_HAVE_BLUETOOTH_QCOM   := true
+BLUETOOTH_HCI_USE_MCT       := true
 
 #Charger
 BACKLIGHT_PATH                      :=/sys/class/backlight/lcd-backlight/brightness
