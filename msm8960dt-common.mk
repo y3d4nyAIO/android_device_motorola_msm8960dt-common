@@ -82,6 +82,10 @@ PRODUCT_PACKAGES += \
     mbhc.bin \
     wcd9310_anc.bin
 
+# Android_filesystem_config.h
+PRODUCT_PACKAGES += \
+    fs_config_files
+	
 # Camera
 PRODUCT_PACKAGES += \
     camera.msm8960 \
