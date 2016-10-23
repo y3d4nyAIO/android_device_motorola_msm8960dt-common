@@ -9,6 +9,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.audio.fluence.voicecall=true \
     persist.audio.fluence.voicerec=false \
     persist.audio.fluence.speaker=true \
+    persist.audio.handset.mic=digital \
     ro.qc.sdk.audio.fluencetype=fluence \
     audio.offload.disable=1 \
     qcom.hw.aac.encoder=true \
