@@ -509,6 +509,10 @@ service qcamerasvr /system/bin/mm-qcamera-daemon
     user camera
     group camera system inet input graphics net_bt_stack
 
+#Restart cameraserver in case of initiating before the camera
+on property:init.svc.qcamerasvr=running
+    restart cameraserver
+
 service qmuxd /system/bin/qmuxd
     class main
     user radio
