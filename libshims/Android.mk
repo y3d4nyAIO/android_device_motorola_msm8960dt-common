@@ -5,6 +5,7 @@ LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 
 LOCAL_SRC_FILES := \
+    GraphicBuffer.cpp \
     gui/SensorManager.cpp
 
 LOCAL_SHARED_LIBRARIES := libutils libgui liblog libbinder
