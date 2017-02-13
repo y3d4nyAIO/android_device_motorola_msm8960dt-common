@@ -33,6 +33,9 @@
 #include <camera/Camera.h>
 #include <camera/CameraParameters.h>
 
+#define OPEN_RETRIES    10
+#define OPEN_RETRY_MSEC 40
+
 static android::Mutex gCameraWrapperLock;
 static camera_module_t *gVendorModule = 0;
 
@@ -54,7 +57,7 @@ camera_module_t HAL_MODULE_INFO_SYM = {
          .hal_api_version = HARDWARE_HAL_API_VERSION,
          .id = CAMERA_HARDWARE_MODULE_ID,
          .name = "Moto X Camera Wrapper",
-         .author = "The CyanogenMod Project",
+         .author = "The XPerience Project",
          .methods = &camera_module_methods,
          .dso = NULL, /* remove compilation warnings */
          .reserved = {0}, /* remove compilation warnings */
@@ -514,9 +517,16 @@ static int camera_device_open(const hw_module_t *module, const char *name,
         memset(camera_device, 0, sizeof(*camera_device));
         camera_device->id = cameraid;
 
-        rv = gVendorModule->common.methods->open(
-                (const hw_module_t*)gVendorModule, name,
-                (hw_device_t**)&(camera_device->vendor));
+        int retries = OPEN_RETRIES;
+        bool retry;
+        do {
+            rv = gVendorModule->common.methods->open(
+                    (const hw_module_t*)gVendorModule, name,
+                    (hw_device_t**)&(camera_device->vendor));
+            retry = --retries > 0 && rv;
+            if (retry)
+                usleep(OPEN_RETRY_MSEC * 1000);
+        } while (retry);
         if (rv) {
             ALOGE("vendor camera open fail");
             goto fail;
