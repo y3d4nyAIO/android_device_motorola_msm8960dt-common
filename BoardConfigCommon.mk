@@ -40,6 +40,8 @@ TARGET_USE_QCOM_BIONIC_OPTIMIZATION     := true
 
 # Kernel
 BOARD_CUSTOM_BOOTIMG_MK    := $(LOCAL_PATH)/mkbootimg.mk
+BOARD_KERNEL_LZ4C_DT 	   := true
+LZMA_RAMDISK_TARGETS 	   := recovery
 BOARD_KERNEL_CMDLINE       := console=ttyHSL0,115200,n8 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3 maxcpus=2 androidboot.write_protect=0 androidboot.selinux=permissive
 BOARD_KERNEL_BASE          := 0x80200000
 BOARD_KERNEL_PAGESIZE      := 2048
@@ -98,7 +100,6 @@ TARGET_USERIMAGES_USE_EXT4              := true
 TARGET_USERIMAGES_USE_F2FS              := true
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE       := ext4
 TARGET_RECOVERY_DENSITY                 := xhdpi
-TARGET_NOT_USE_GZIP_RECOVERY_RAMDISK    := true
 
 # RIL
 BOARD_RIL_CLASS := ../../../$(LOCAL_PATH)/ril/
@@ -124,6 +125,8 @@ WIFI_DRIVER_FW_PATH_STA             := "sta"
 WPA_SUPPLICANT_VERSION              := VER_0_8_X
 
 #TWRP
+BOARD_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
+
 BOARD_HAS_NO_REAL_SDCARD            := true
 RECOVERY_SDCARD_ON_DATA             := true
 TARGET_RECOVERY_PIXEL_FORMAT        := "RGB_565"
@@ -143,4 +146,6 @@ TW_INTERNAL_STORAGE_MOUNT_POINT     := "data"
 TW_INTERNAL_STORAGE_PATH            := "/data/media"
 TW_NO_SCREEN_BLANK                  := true
 TW_NO_USB_STORAGE                   := true
-TW_THEME                            := portrait_hdpi
+#TW_THEME                            := portrait_hdpi
+TW_THEME                            := dark_hdpi
+TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
