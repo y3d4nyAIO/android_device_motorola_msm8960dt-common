@@ -498,7 +498,7 @@ service netmgrd /system/bin/netmgrd
     group radio system wakelock
 
 service qcamerasvr /system/bin/mm-qcamera-daemon
-    class core
+    class late_start
     user camera
     group camera system inet input graphics net_bt_stack
 

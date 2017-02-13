@@ -103,6 +103,8 @@ TARGET_NOT_USE_GZIP_RECOVERY_RAMDISK    := true
 # RIL
 BOARD_RIL_CLASS := ../../../$(LOCAL_PATH)/ril/
 
+BOARD_SECCOMP_POLICY := device/motorola/msm8960dt-common/seccomp
+
 # SELinux
 -include device/qcom/sepolicy/sepolicy.mk
 
