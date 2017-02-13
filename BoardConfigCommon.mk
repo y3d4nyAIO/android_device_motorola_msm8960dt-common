@@ -137,6 +137,7 @@ RECOVERY_GRAPHICS_USE_LINELENGTH    := true
 BOARD_SUPPRESS_SECURE_ERASE         := true
 TW_INCLUDE_CRYPTO                   := true
 TW_INCLUDE_L_CRYPTO                 := true
+TARGET_HW_DISK_ENCRYPTION 		    := true
 TW_TARGET_USES_QCOM_BSP             := true
 TW_DEFAULT_EXTERNAL_STORAGE         := true
 TW_EXCLUDE_SUPERSU                  := true
@@ -148,4 +149,6 @@ TW_NO_SCREEN_BLANK                  := true
 TW_NO_USB_STORAGE                   := true
 #TW_THEME                            := portrait_hdpi
 TW_THEME                            := dark_hdpi
-TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
+TW_BRIGHTNESS_PATH 				    := /sys/class/backlight/lcd-backlight/brightness
+# Debug flags
+TWRP_INCLUDE_LOGCAT := true
