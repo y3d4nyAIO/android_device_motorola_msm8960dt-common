@@ -129,6 +129,10 @@ WIFI_DRIVER_FW_PATH_STA             := "sta"
 WPA_SUPPLICANT_VERSION              := VER_0_8_X
 
 #TWRP
+# Recovery: TWRP support
+ifeq ($(WITH_TWRP),true)
+-include $(PLATFORM_PATH)/twrp.mk
+endif
 BOARD_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
 
 BOARD_HAS_NO_REAL_SDCARD            := true
