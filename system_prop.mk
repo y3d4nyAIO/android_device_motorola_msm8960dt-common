@@ -103,6 +103,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.timed.enable=true
 
+PRODUCT_PROPERTY_OVERRIDES += \
+        debug.egl.recordable.rgba8888=1
+
 # USB
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.usb.mtp=0x2e62 \
