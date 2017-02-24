@@ -1,1 +1,3 @@
+#============= mediaserver ==============
+allow mediaserver system_file:file execmod;
 allow mediaserver media_rw_data_file:file write;

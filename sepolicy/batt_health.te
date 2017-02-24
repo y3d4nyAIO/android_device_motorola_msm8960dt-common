@@ -1,5 +1,8 @@
 #============= batt_health ==============
 allow batt_health sysfs:file { open read };
+allow batt_health sysfs:dir { open read };
+allow batt_health unlabeled:dir search;
+allow batt_health unlabeled:file { open read };
 
 type batt_health, domain;
 type batt_health_exec, exec_type, file_type;
