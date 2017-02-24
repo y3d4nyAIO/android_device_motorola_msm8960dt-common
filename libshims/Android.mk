@@ -72,3 +72,12 @@ LOCAL_MODULE := libshims_thermal
 LOCAL_MODULE_TAGS := optional
 
 include $(BUILD_SHARED_LIBRARY)
+
+include $(CLEAR_VARS)
+
+LOCAL_SRC_FILES := GraphicBuffer.cpp
+
+LOCAL_MODULE := libshims_graphicbuffer
+LOCAL_MODULE_TAGS := optional
+
+include $(BUILD_SHARED_LIBRARY)

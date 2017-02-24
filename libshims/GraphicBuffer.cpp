@@ -15,3 +15,4 @@
  */
 
 extern "C" void _ZN7android13GraphicBufferC1Ejjij() { }
+extern "C" void _ZN7android2spINS_13GraphicBufferEEaSEPS1() {}
