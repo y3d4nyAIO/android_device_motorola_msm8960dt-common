@@ -3,3 +3,4 @@ allow rmt_storage firmware_file:dir search;
 allow rmt_storage firmware_file:file r_file_perms;
 allow rmt_storage self:capability dac_override;
 allow rmt_storage unlabeled:file { open read };
+allow rmt_storage unlabeled:dir search;
