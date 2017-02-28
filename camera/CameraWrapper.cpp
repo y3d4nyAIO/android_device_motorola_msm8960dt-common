@@ -60,7 +60,7 @@ camera_module_t HAL_MODULE_INFO_SYM = {
          .author = "The XPerience Project",
          .methods = &camera_module_methods,
          .dso = NULL, /* remove compilation warnings */
-         .reserved = {0}, /* remove compilation warnings */
+         .reserved = { 0 }, /* remove compilation warnings */
     },
     .get_number_of_cameras = camera_get_number_of_cameras,
     .get_camera_info = camera_get_camera_info,
