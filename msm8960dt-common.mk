@@ -162,7 +162,6 @@ PRODUCT_PACKAGES += \
     libOmxAmrEnc \
     libOmxEvrcEnc \
     libOmxQcelp13Enc \
-    libmm-omxcore \
     libstagefrighthw
 
 # Power HAL
