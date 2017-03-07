@@ -1,6 +1,6 @@
 # mount point   fstype          device
 
-/data         f2fs      /dev/block/platform/msm_sdcc.1/by-name/userdata     flags=fsflags="inline_xattr";encryptable=footer;length=-16384
+/data         f2fs      /dev/block/platform/msm_sdcc.1/by-name/userdata     flags=fsflags="inline_xattr";encryptable=footer,length=-16384
 /cache        ext4      /dev/block/platform/msm_sdcc.1/by-name/cache        
 /system       ext4      /dev/block/platform/msm_sdcc.1/by-name/system       
 /misc         emmc      /dev/block/platform/msm_sdcc.1/by-name/misc

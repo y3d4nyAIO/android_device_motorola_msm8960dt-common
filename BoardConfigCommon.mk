@@ -165,3 +165,4 @@ TW_THEME                            := dark_hdpi
 TW_BRIGHTNESS_PATH 				    := /sys/class/backlight/lcd-backlight/brightness
 # Debug flags
 TWRP_INCLUDE_LOGCAT := true
+TW_MAX_BRIGHTNESS := 126
