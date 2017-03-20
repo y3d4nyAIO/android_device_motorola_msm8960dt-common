@@ -42,7 +42,7 @@ TARGET_USE_QCOM_BIONIC_OPTIMIZATION     := true
 BOARD_CUSTOM_BOOTIMG_MK    := $(LOCAL_PATH)/mkbootimg.mk
 BOARD_KERNEL_LZ4C_DT 	   := true
 LZMA_RAMDISK_TARGETS 	   := recovery
-BOARD_KERNEL_CMDLINE       := console=ttyHSL0,115200,n8 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3 maxcpus=2 androidboot.write_protect=0
+BOARD_KERNEL_CMDLINE       := console=ttyHSL0,115200,n8 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3 maxcpus=2 androidboot.write_protect=0 androidboot.selinux=permissive
 BOARD_KERNEL_BASE          := 0x80200000
 BOARD_KERNEL_PAGESIZE      := 2048
 BOARD_KERNEL_SEPARATED_DT  := true
@@ -77,6 +77,8 @@ TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS  := true
 TARGET_HAS_LEGACY_CAMERA_HAL1 		 	:= true
 TARGET_NEEDS_METADATA_CAMERA_SOURCE	 	:= true
 BOARD_GLOBAL_CFLAGS 					+= -DMETADATA_CAMERA_SOURCE
+TARGET_USES_MEDIA_EXTENSIONS 			:= true
+TARGET_NEEDS_GCC_LIBC 					:= true
 
 # Display
 NUM_FRAMEBUFFER_SURFACE_BUFFERS     := 3
@@ -127,7 +129,7 @@ ifeq ($(WITH_TWRP),true)
 -include $(PLATFORM_PATH)/twrp.mk
 endif
 BOARD_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
-
+HAVE_SELINUX 						:= true
 BOARD_HAS_NO_REAL_SDCARD            := true
 RECOVERY_SDCARD_ON_DATA             := true
 TARGET_RECOVERY_PIXEL_FORMAT        := "RGB_565"
@@ -136,7 +138,10 @@ TW_EXTERNAL_STORAGE_MOUNT_POINT     := "usb-otg"
 DEVICE_RESOLUTION                   := 720x1280
 RECOVERY_GRAPHICS_USE_LINELENGTH    := true
 BOARD_SUPPRESS_SECURE_ERASE         := true
-TW_INCLUDE_CRYPTO                   := true
+TW_INCLUDE_CRYPTO 			    	:= true
+TW_INCLUDE_L_CRYPTO 			    := true
+TW_CRYPTO_REAL_BLKDEV 				:= "/dev/block/platform/msm_sdcc.1/by-name/userdata"
+TW_FLASH_FROM_STORAGE 				:= true
 TARGET_HW_DISK_ENCRYPTION 		    := true
 TW_TARGET_USES_QCOM_BSP             := true
 TW_DEFAULT_EXTERNAL_STORAGE         := true
@@ -146,9 +151,11 @@ TW_INTERNAL_STORAGE_MOUNT_POINT     := "data"
 TW_INTERNAL_STORAGE_PATH            := "/data/media"
 TW_NO_SCREEN_BLANK                  := true
 TW_NO_USB_STORAGE                   := true
+TW_INCLUDE_FUSE_EXFAT 				:= true
 #TW_THEME                            := portrait_hdpi
 TW_THEME                            := portrait_hdpi
 TW_BRIGHTNESS_PATH 				    := /sys/class/backlight/lcd-backlight/brightness
+TARGET_USE_CUSTOM_LUN_FILE_PATH     := /sys/devices/platform/msm_hsusb/gadget/lun0/file
 # Debug flags
-TWRP_INCLUDE_LOGCAT := true
-TW_MAX_BRIGHTNESS := 126
+TWRP_INCLUDE_LOGCAT					:= true
+TW_MAX_BRIGHTNESS 					:= 126
