@@ -125,26 +125,27 @@ WPA_SUPPLICANT_VERSION              := VER_0_8_X
 # Recovery: TWRP support
 ifeq ($(WITH_TWRP),true)
 -include $(PLATFORM_PATH)/twrp.mk
-BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 endif
 BOARD_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
 
 BOARD_HAS_NO_REAL_SDCARD            := true
 RECOVERY_SDCARD_ON_DATA             := true
-#TARGET_RECOVERY_PIXEL_FORMAT        := "RGB_565"
-TARGET_RECOVERY_QCOM_RTC_FIX 		:= true
-TARGET_RECOVERY_PIXEL_FORMAT        := "RGB_8888"
+TARGET_RECOVERY_PIXEL_FORMAT        := "RGB_565"
+TW_EXTERNAL_STORAGE_PATH            := "/usb-otg"
+TW_EXTERNAL_STORAGE_MOUNT_POINT     := "usb-otg"
 DEVICE_RESOLUTION                   := 720x1280
 RECOVERY_GRAPHICS_USE_LINELENGTH    := true
 BOARD_SUPPRESS_SECURE_ERASE         := true
 TW_INCLUDE_CRYPTO                   := true
 TARGET_HW_DISK_ENCRYPTION 		    := true
+TW_TARGET_USES_QCOM_BSP             := true
 TW_DEFAULT_EXTERNAL_STORAGE         := true
 TW_EXCLUDE_SUPERSU                  := true
 TW_INCLUDE_NTFS_3G                  := true
 TW_INTERNAL_STORAGE_MOUNT_POINT     := "data"
 TW_INTERNAL_STORAGE_PATH            := "/data/media"
 TW_NO_SCREEN_BLANK                  := true
+TW_NO_USB_STORAGE                   := true
 #TW_THEME                            := portrait_hdpi
 TW_THEME                            := portrait_hdpi
 TW_BRIGHTNESS_PATH 				    := /sys/class/backlight/lcd-backlight/brightness
