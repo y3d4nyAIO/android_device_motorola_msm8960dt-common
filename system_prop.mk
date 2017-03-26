@@ -13,7 +13,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.qc.sdk.audio.fluencetype=fluence \
     audio.offload.disable=1 \
     qcom.hw.aac.encoder=true \
-    mm.enable.smoothstreaming=true
+    mm.enable.smoothstreaming=true \
+	mm.enable.qcom_parser=1048575
 
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
