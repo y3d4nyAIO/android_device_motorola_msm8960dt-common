@@ -35,14 +35,17 @@ TARGET_ARCH                             := arm
 TARGET_ARCH_VARIANT                     := armv7-a-neon
 TARGET_CPU_ABI                          := armeabi-v7a
 TARGET_CPU_ABI2                         := armeabi
+TARGET_CPU_SMP 							:= true
 TARGET_CPU_VARIANT                      := krait
 TARGET_USE_QCOM_BIONIC_OPTIMIZATION     := true
+TARGET_GLOBAL_CFLAGS 					+= -mfpu=neon -mfloat-abi=softfp
+TARGET_GLOBAL_CPPFLAGS 					+= -mfpu=neon -mfloat-abi=softfp
 
 # Kernel
 BOARD_CUSTOM_BOOTIMG_MK    := $(LOCAL_PATH)/mkbootimg.mk
 BOARD_KERNEL_LZ4C_DT 	   := true
 LZMA_RAMDISK_TARGETS 	   := recovery
-BOARD_KERNEL_CMDLINE       := console=ttyHSL0,115200,n8 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3 maxcpus=2 androidboot.write_protect=0 androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE       := console=ttyHSL0,115200,n8 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3 maxcpus=2 androidboot.write_protect=0
 BOARD_KERNEL_BASE          := 0x80200000
 BOARD_KERNEL_PAGESIZE      := 2048
 BOARD_KERNEL_SEPARATED_DT  := true
@@ -52,7 +55,7 @@ TARGET_KERNEL_CONFIG       := msm8960dt_mmi_defconfig
 
 # Audio
 BOARD_USES_ALSA_AUDIO               := true
-BOARD_USES_LEGACY_ALSA_AUDIO 	    := true
+#BOARD_USES_LEGACY_ALSA_AUDIO 	    := true
 BOARD_USES_FLUENCE_INCALL           := true
 BOARD_USES_SEPERATED_AUDIO_INPUT    := true
 BOARD_USES_SEPERATED_VOICE_SPEAKER  := true
