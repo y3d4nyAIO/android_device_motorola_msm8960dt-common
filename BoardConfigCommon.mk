@@ -55,7 +55,6 @@ TARGET_KERNEL_CONFIG       := msm8960dt_mmi_defconfig
 
 # Audio
 BOARD_USES_ALSA_AUDIO               := true
-BOARD_USES_LEGACY_ALSA_AUDIO 	    := false
 BOARD_USES_FLUENCE_INCALL           := true
 BOARD_USES_SEPERATED_AUDIO_INPUT    := true
 BOARD_USES_SEPERATED_VOICE_SPEAKER  := true
