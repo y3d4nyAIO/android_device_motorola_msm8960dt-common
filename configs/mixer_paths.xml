@@ -124,44 +124,6 @@
 
     <!-- These are audio route (FE to BE) specific mixer settings -->
 
-    <!-- HiFi -->
-    <path name="deep-buffer-playback">
-        <ctl name="SLIMBUS_0_RX Audio Mixer MultiMedia1" value="1" />
-    </path>
-
-    <path name="deep-buffer-playback hdmi">
-        <ctl name="HDMI Mixer MultiMedia1" value="1" />
-    </path>
-
-    <path name="deep-buffer-playback speaker-and-hdmi">
-        <path name="deep-buffer-playback hdmi" />
-        <path name="deep-buffer-playback" />
-    </path>
-
-    <!-- HiFiPROXY Rx -->
-    <path name="deep-buffer-playback afe-proxy">
-        <ctl name="AFE_PCM_RX Audio Mixer MultiMedia1" value="1" />
-    </path>
-
-    <!-- HiFiBT SCO Rx -->
-    <path name="deep-buffer-playback bt-sco">
-        <ctl name="INTERNAL_BT_SCO_RX Audio Mixer MultiMedia1" value="1" />
-    </path>
-
-    <!-- HiFiBT SCO WB Rx -->
-    <path name="deep-buffer-playback bt-sco-wb">
-        <ctl name="INTERNAL_BT_SCO_RX Audio Mixer MultiMedia1" value="1" />
-    </path>
-
-    <path name="deep-buffer-playback usb-headphones">
-        <path name="deep-buffer-playback afe-proxy" />
-    </path>
-
-    <path name="deep-buffer-playback speaker-and-usb-headphones">
-        <path name="deep-buffer-playback usb-headphones" />
-        <path name="deep-buffer-playback" /> 
-    </path>
-
     <!-- HiFi Lowlatency -->
     <path name="low-latency-playback">
         <ctl name="SLIMBUS_0_RX Audio Mixer MultiMedia5" value="1" />

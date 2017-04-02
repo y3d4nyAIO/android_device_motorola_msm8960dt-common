@@ -4,13 +4,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Audio
 PRODUCT_PROPERTY_OVERRIDES += \
-    lpa.decode=true \
     ro.audio.flinger_standbytime_ms=300 \
     persist.audio.lowlatency.rec=false \
     persist.audio.vr.enable=false \
     persist.audio.fluence.voicecall=true \
     persist.audio.fluence.voicerec=false \
-    persist.audio.fluence.speaker=true \
+    persist.audio.fluence.speaker=false \
     persist.audio.handset.mic=digital \
     ro.qc.sdk.audio.fluencetype=fluence \
 	use.dedicated.device.for.voip=true \
