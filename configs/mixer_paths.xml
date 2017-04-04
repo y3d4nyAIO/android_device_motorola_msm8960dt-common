@@ -227,6 +227,11 @@
         <path name="audio-record" />
     </path>
 
+    <!-- HiFi RecPROXY Tx -->
+    <path name="afe-proxy-record">
+        <ctl name="MultiMedia1 Mixer AFE_PCM_TX" value="1" />
+    </path>
+
     <!-- HiFi Rec Compressed -->
     <path name="audio-record-compress">
         <ctl name="MultiMedia4 Mixer SLIM_0_TX" value="1" />
@@ -361,11 +366,6 @@
     </path>
 
     <path name="afe-proxy-playback afe-proxy">
-    </path>
-
-    <!-- HiFi RecPROXY Tx -->
-    <path name="afe-proxy-record">
-        <ctl name="MultiMedia1 Mixer AFE_PCM_TX" value="1" />
     </path>
 
     <!-- These are actual sound device specific mixer settings -->
@@ -553,6 +553,10 @@
 
     <path name="voice-handset-mic">
         <path name="handset-mic" />
+    </path>
+
+    <!-- USB PROXY Tx -->
+    <path name="usb-headset-mic">
     </path>
 
      <!-- Voice Headset -->
