@@ -4,7 +4,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Audio
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.audio.flinger_standbytime_ms=300 \
     persist.audio.lowlatency.rec=false \
     persist.audio.vr.enable=false \
     persist.audio.fluence.voicecall=true \

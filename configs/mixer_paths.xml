@@ -163,7 +163,10 @@
 
     <!-- HiFi Lowlatency -->
     <path name="low-latency-playback">
-        <ctl name="SLIMBUS_0_RX Audio Mixer MultiMedia5" value="1" />
+        <ctl name="MI2S_RX Audio Mixer MultiMedia5" value="1" />
+    </path>
+    <path name="low-latency-playback speaker">
+        <ctl name="MI2S_RX Audio Mixer MultiMedia5" value="1" />
     </path>
 
     <path name="low-latency-playback hdmi">
@@ -173,6 +176,7 @@
     <path name="low-latency-playback speaker-and-hdmi">
         <path name="low-latency-playback hdmi" />
         <path name="low-latency-playback" />
+        <path name="low-latency-playback speaker" />
     </path>
 
     <!-- HiFi LowlatencyBT SCO Rx -->
@@ -373,8 +377,19 @@
     <!-- Output devices -->
  
     <!-- Speaker -->
+    <!--<path name="speaker">
+        <ctl name="SLIM_0_RX Channels" value="One" />
+        <ctl name="RX3 MIX1 INP1" value="RX1" />
+        <ctl name="RX4 DSM MUX" value="DSM_INV" />
+        <ctl name="LINEOUT1 Volume" value="5" />
+        <ctl name="LINEOUT3 Volume" value="5" />
+        <ctl name="RX3 Digital Volume" value="84" />
+        <ctl name="RX4 Digital Volume" value="84" />
+    </path>-->
+
     <path name="speaker">
         <ctl name="SLIM_0_RX Channels" value="One" />
+        <ctl name="MI2S_RX Audio Mixer MultiMedia1" value="1" />
         <ctl name="RX3 MIX1 INP1" value="RX1" />
         <ctl name="RX4 DSM MUX" value="DSM_INV" />
         <ctl name="LINEOUT1 Volume" value="5" />
@@ -386,6 +401,8 @@
      <!-- Earpiece -->
     <path name="handset">
         <ctl name="SLIM_0_RX Channels" value="One" />
+        <ctl name="SLIMBUS_0_RX Audio Mixer MultiMedia1" value="1" />
+        <ctl name="MI2S_RX Audio Mixer MultiMedia1" value="1" />
         <ctl name="RX1 MIX1 INP1" value="RX1" />
         <ctl name="DAC1 Switch" value="1" />
         <ctl name="RX1 Digital Volume" value="84" />
@@ -395,31 +412,43 @@
     <!-- Headphones -->
     <path name="headphones">
         <ctl name="SLIM_0_RX Channels" value="Two" />
+        <ctl name="SLIM RX1 MUX" value="AIF1_PB" />
+        <ctl name="SLIM RX2 MUX" value="AIF1_PB" />
         <ctl name="RX1 MIX1 INP1" value="RX1" />
         <ctl name="RX2 MIX1 INP1" value="RX2" />
         <ctl name="HPHL DAC Switch" value="1" />
+        <ctl name="HPHR DAC Switch" value="1" />
         <ctl name="RX1 Digital Volume" value="84" />
         <ctl name="RX2 Digital Volume" value="84" />
-        <ctl name="HPHL Volume" value="9" />
-        <ctl name="HPHR Volume" value="9" />
+        <ctl name="HPHL Volume" value="80" />
+        <ctl name="HPHR Volume" value="80" />
     </path>
 
     <!-- Speaker Headset -->
     <path name="speaker-and-headphones">
         <ctl name="SLIM_0_RX Channels" value="Two" />
+        <ctl name="SLIMBUS_0_RX Audio Mixer MultiMedia1" value="1" />
+        <ctl name="MI2S_RX Audio Mixer MultiMedia1" value="1" />
+        <ctl name="SLIM RX1 MUX" value="AIF1_PB" />
+        <ctl name="SLIM RX2 MUX" value="AIF1_PB" />
         <ctl name="RX3 MIX1 INP1" value="RX1" />
         <ctl name="RX4 DSM MUX" value="DSM_INV" />
         <ctl name="RX1 MIX1 INP1" value="RX1" />
         <ctl name="RX2 MIX1 INP1" value="RX2" />
         <ctl name="HPHL DAC Switch" value="1" />
+        <ctl name="HPHR DAC Switch" value="1" />
         <ctl name="RX3 Digital Volume" value="84" />
         <ctl name="RX4 Digital Volume" value="84" />
         <ctl name="RX1 Digital Volume" value="84" />
         <ctl name="RX2 Digital Volume" value="84" />
         <ctl name="LINEOUT1 Volume" value="5" />
         <ctl name="LINEOUT3 Volume" value="5" />
-        <ctl name="HPHL Volume" value="9" />
-        <ctl name="HPHR Volume" value="9" />
+        <ctl name="HPHL Volume" value="80" />
+        <ctl name="HPHR Volume" value="80" />
+        <ctl name="HPL AIC Output Mixer L_DAC Switch" value="1" />
+        <ctl name="HPR AIC Output Mixer R_DAC Switch" value="1" />
+        <ctl name="AIC DAC Playback SwitchR" value="1" />
+        <ctl name="AIC DAC Playback SwitchL" value="1" />
     </path>
 
     <!-- Voice Speaker -->
@@ -524,8 +553,9 @@
         <ctl name="SLIM TX7 MUX" value="DEC3" />
         <ctl name="DEC3 MUX" value="ADC4" />
         <ctl name="DEC3 Volume" value="84" />
-        <ctl name="ADC4 Volume" value="3" />
+        <ctl name="ADC4 Volume" value="100" />
         <ctl name="MICBIAS1 CAPLESS Switch" value="1" />
+        <ctl name="AIF1_CAP Mixer SLIM TX7" value="1" />
     </path>
 
     <!-- Handset -->
@@ -583,6 +613,7 @@
         <ctl name="DEC3 MUX" value="ADC4" />
         <ctl name="DEC3 Volume" value="105" />
         <ctl name="ADC4 Volume" value="3" />
+        <ctl name="MICBIAS1 CAPLESS Switch" value="1" />
         <ctl name="MICBIAS3 CAPLESS Switch" value="1" />
         <ctl name="SLIM TX8 MUX" value="DEC4" />
         <ctl name="DEC4 MUX" value="ADC3" />
@@ -601,9 +632,12 @@
         <ctl name="MICBIAS1 CAPLESS Switch" value="1" />
         <ctl name="SLIM TX8 MUX" value="DEC3" />
         <ctl name="DEC3 MUX" value="ADC4" />
-        <ctl name="DEC3 Volume" value="84" />
-        <ctl name="ADC4 Volume" value="3" />
+        <ctl name="DEC3 Volume" value="100" />
+        <ctl name="ADC4 Volume" value="70" />
+        <ctl name="MICBIAS1 CAPLESS Switch" value="1" />
         <ctl name="MICBIAS3 CAPLESS Switch" value="1" />
+        <ctl name="AIF1_CAP Mixer SLIM TX7" value="1" />
+        <ctl name="AIF1_CAP Mixer SLIM TX8" value="1" />
     </path>
 
     <path name="speaker-dmic-endfire">
@@ -656,19 +690,23 @@
     <!-- TTY Full Tx -->
     <path name="voice-tty-full-headset-mic">
         <ctl name="SLIM_0_TX Channels" value="One" />
-        <ctl name="SLIM TX7 MUX" value="DEC5" />
-        <ctl name="DEC5 MUX" value="ADC2" />
-        <ctl name="DEC5 Volume" value="84" />
-        <ctl name="ADC2 Volume" value="3" />
+        <ctl name="SLIM TX7 MUX" value="DEC4" />
+        <ctl name="DEC4 MUX" value="ADC3" />
+        <ctl name="DEC4 Volume" value="70" />
+        <ctl name="ADC3 Volume" value="100" />
+        <ctl name="MICBIAS1 CAPLESS Switch" value="1" />
+        <ctl name="TX4 HPF cut off" value="MIN_3DB_75Hz" />
     </path>
 
     <!-- TTY Headset Tx -->
     <path name="voice-tty-hco-headset-mic">
         <ctl name="TTY Mode" value="HCO" />
         <ctl name="SLIM_0_TX Channels" value="One" />
-        <ctl name="SLIM TX7 MUX" value="DEC5" />
-        <ctl name="DEC5 MUX" value="ADC2" />
-        <ctl name="DEC5 Volume" value="84" />
-        <ctl name="ADC2 Volume" value="3" />
+        <ctl name="SLIM TX7 MUX" value="DEC4" />
+        <ctl name="DEC4 MUX" value="ADC3" />
+        <ctl name="DEC4 Volume" value="70" />
+        <ctl name="ADC3 Volume" value="100" />
+        <ctl name="MICBIAS1 CAPLESS Switch" value="1" />
+        <ctl name="TX4 HPF cut off" value="MIN_3DB_75Hz" />
     </path>
 </mixer>
