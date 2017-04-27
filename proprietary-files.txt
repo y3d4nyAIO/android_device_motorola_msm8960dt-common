@@ -108,7 +108,6 @@ lib/libchromatix_s5k4e1_default_video.so
 lib/libchromatix_s5k4e1_preview.so
 
 # CPU
-bin/mpdecision
 bin/thermald
 lib/libqc-opt.so
 vendor/lib/libqti-perfd-client.so

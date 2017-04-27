@@ -478,11 +478,6 @@ service mmi-touch-sh /system/bin/sh /init.mmi.touch.sh
     oneshot
     disabled
 
-service mpdecision /system/bin/mpdecision --avg_comp
-    user root
-    group root system
-    disabled
-
 service msp430 /system/bin/msp430 boot
     class core
     user compass
