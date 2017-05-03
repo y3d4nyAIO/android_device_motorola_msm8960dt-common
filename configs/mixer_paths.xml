@@ -176,7 +176,6 @@
     <path name="low-latency-playback speaker-and-hdmi">
         <path name="low-latency-playback hdmi" />
         <path name="low-latency-playback" />
-        <path name="low-latency-playback speaker" />
     </path>
 
     <!-- HiFi LowlatencyBT SCO Rx -->
