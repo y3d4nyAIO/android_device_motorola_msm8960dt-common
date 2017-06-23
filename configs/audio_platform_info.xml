@@ -91,8 +91,8 @@
 
     <device_names>
         <!-- Output devices -->
-        <device name="SND_DEVICE_OUT_VOICE_SPEAKER" alias="speaker" />
-        <device name="SND_DEVICE_OUT_VOIP_SPEAKER" alias="speaker" />
+        <device name="SND_DEVICE_OUT_VOICE_SPEAKER" alias="low-latency-playback handset" />
+        <device name="SND_DEVICE_OUT_VOIP_SPEAKER" alias="low-latency-playback handset" />
 
         <!-- Input devices -->
         <device name="SND_DEVICE_IN_HANDSET_STEREO_DMIC" alias="handset-mic" />
