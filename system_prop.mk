@@ -16,7 +16,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
     audio.offload.disable=1 \
     qcom.hw.aac.encoder=true \
     mm.enable.smoothstreaming=true \
-	mm.enable.qcom_parser=1048575
+	mm.enable.qcom_parser=1048575 \
+    audio.offload.disable=0 \
+    audio.offload.pcm.16bit.enable=false \
+    audio.offload.pcm.24bit.enable=false \
+    audio.offload.buffer.size.kb=32 \
+    audio.offload.gapless.enabled=true \
+    audio.offload.video=false
 
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
