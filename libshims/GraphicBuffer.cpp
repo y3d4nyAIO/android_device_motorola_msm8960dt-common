@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+#include <string>
+
 extern "C" void _ZN7android2spINS_13GraphicBufferEEaSEPS1() {}
 // GraphicBuffer(uint32_t inWidth, uint32_t inHeight, PixelFormat inFormat,
 //               uint32_t inUsage, std::string requestorName = "<Unknown>");
