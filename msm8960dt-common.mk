@@ -107,6 +107,7 @@ PRODUCT_PACKAGES += \
     libshim_mdmcutback \
     libshim_qcopt \
     libshim_ril \
+    libshim_sensorlistener.so \
     libshims_thermal \
     libshims_graphicbuffer
 
