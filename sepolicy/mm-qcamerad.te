@@ -1,4 +1,6 @@
 #============= mm-qcamerad ==============
+allow mm-qcamerad system_file:file execmod;
+
 # WARNING: these sockets shouldn't be under /data
 allow mm-qcamerad camera_prop:property_service set;
 allow mm-qcamerad camera_socket:chr_file rw_file_perms;
