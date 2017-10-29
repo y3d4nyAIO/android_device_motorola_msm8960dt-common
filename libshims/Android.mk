@@ -81,35 +81,3 @@ LOCAL_MODULE := libshims_graphicbuffer
 LOCAL_MODULE_TAGS := optional
 
 include $(BUILD_SHARED_LIBRARY)
-
-# libshims_cameraservice
-include $(CLEAR_VARS)
-
-LOCAL_SRC_FILES := \
-    libcameraservice/CameraFlashlight.cpp \
-    libcameraservice/api1/CameraClient.cpp
-
-LOCAL_C_INCLUDES += \
-    frameworks/native/include/media/openmax
-
-LOCAL_SHARED_LIBRARIES:= \
-    libui \
-    liblog \
-    libutils \
-    libbinder \
-    libcutils \
-    libmedia \
-    libmediautils \
-    libcamera_client \
-    libgui \
-    libhardware \
-    libsync \
-    libcamera_metadata \
-    libjpeg \
-    libmemunreachable \
-    libcameraservice
-
-LOCAL_MODULE := libshims_cameraservice
-LOCAL_MODULE_TAGS := optional
-
-include $(BUILD_SHARED_LIBRARY)
