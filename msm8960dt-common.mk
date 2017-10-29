@@ -96,14 +96,18 @@ PRODUCT_PACKAGES += \
 # Compat
 PRODUCT_PACKAGES += \
     libboringssl-compat \
+    libstlport
+
+# Camerashims and others shims
+PRODUCT_PACKAGES += \
     libshim_camera \
+    libshims_cameraservice \
     libshim_log \
     libshim_mdmcutback \
     libshim_qcopt \
     libshim_ril \
     libshims_thermal \
-	libshims_graphicbuffer \
-    libstlport
+    libshims_graphicbuffer
 
 # Display
 PRODUCT_PACKAGES += \
