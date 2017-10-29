@@ -607,7 +607,8 @@ on start-charging
     start batt_health
     start charge_only_mode
 
-service charger /charger
-    class charger
-    group log
+service charge_only_mode /system/bin/charge_only_mode
+    user root
+    group graphics system input
+    disabled
     seclabel u:r:healthd:s0
