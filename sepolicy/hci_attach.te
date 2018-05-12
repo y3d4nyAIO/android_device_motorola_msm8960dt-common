@@ -1,2 +1,2 @@
-#============= hci_attach ==============
 allow hci_attach bluetooth_data_file:file read;
+
