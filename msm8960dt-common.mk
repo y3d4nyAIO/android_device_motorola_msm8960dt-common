@@ -100,6 +100,7 @@ PRODUCT_PACKAGES += \
 
 # Camerashims and others shims
 PRODUCT_PACKAGES += \
+    libshim_bionic \
     libshim_camera \
     libshims_cameraservice \
     libshim_log \
