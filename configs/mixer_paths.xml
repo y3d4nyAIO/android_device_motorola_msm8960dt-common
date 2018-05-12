@@ -177,6 +177,11 @@
         <path name="low-latency-playback hdmi" />
         <path name="low-latency-playback" />
     </path>
+	
+	<path name="low-latency-playback headphones">
+		<ctl name="MI2S_RX Audio Mixer MultiMedia5" value="1" />
+		<ctl name="SLIM_0_RX Channels" value="Two" />
+	</path>
 
     <!-- HiFi LowlatencyBT SCO Rx -->
     <path name="low-latency-playback bt-sco">
@@ -411,16 +416,13 @@
     <!-- Headphones -->
     <path name="headphones">
         <ctl name="SLIM_0_RX Channels" value="Two" />
-        <ctl name="SLIM RX1 MUX" value="AIF1_PB" />
-        <ctl name="SLIM RX2 MUX" value="AIF1_PB" />
         <ctl name="RX1 MIX1 INP1" value="RX1" />
+        <ctl name="RX1 MIX1 INP2" value="RX6" />
         <ctl name="RX2 MIX1 INP1" value="RX2" />
+        <ctl name="RX2 MIX1 INP2" value="RX7" />
         <ctl name="HPHL DAC Switch" value="1" />
-        <ctl name="HPHR DAC Switch" value="1" />
-        <ctl name="RX1 Digital Volume" value="84" />
-        <ctl name="RX2 Digital Volume" value="84" />
-        <ctl name="HPHL Volume" value="80" />
-        <ctl name="HPHR Volume" value="80" />
+        <ctl name="SLIM TX3 MUX" value="RMIX1" />
+        <ctl name="SLIM TX5 MUX" value="RMIX2" />
     </path>
 
     <!-- Speaker Headset -->
