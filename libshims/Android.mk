@@ -132,7 +132,7 @@ LOCAL_SRC_FILES := \
     sensorlistener/ISensorServer.cpp \
     sensorlistener/SensorManager.cpp
 
-LOCAL_MODULE := libshims_sensorlistener
+LOCAL_MODULE := libshim_sensorlistener
 LOCAL_MODULE_TAGS := optional
 LOCAL_SHARED_LIBRARIES := \
     libnativeloader \
@@ -145,6 +145,6 @@ LOCAL_SHARED_LIBRARIES := \
     libutils \
     liblog \
     libbase \
-    libsensor
+    libgui
 
 include $(BUILD_SHARED_LIBRARY)
