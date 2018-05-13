@@ -25,7 +25,6 @@
 
 #define LOG_TAG "CameraWrapper"
 #include <cutils/log.h>
-#include <cutils/properties.h>
 
 #include <utils/threads.h>
 #include <utils/String8.h>
@@ -33,12 +32,6 @@
 #include <hardware/camera.h>
 #include <camera/Camera.h>
 #include <camera/CameraParameters.h>
-
-#define OPEN_RETRIES    10
-#define OPEN_RETRY_MSEC 40
-
-#define BACK_CAMERA     0
-#define FRONT_CAMERA    1
 
 static android::Mutex gCameraWrapperLock;
 static camera_module_t *gVendorModule = 0;
@@ -57,16 +50,14 @@ static struct hw_module_methods_t camera_module_methods = {
 camera_module_t HAL_MODULE_INFO_SYM = {
     .common = {
          .tag = HARDWARE_MODULE_TAG,
-         .version_major = 1,
-         .version_minor = 1,
          .module_api_version = CAMERA_MODULE_API_VERSION_1_0,
          .hal_api_version = HARDWARE_HAL_API_VERSION,
          .id = CAMERA_HARDWARE_MODULE_ID,
          .name = "Moto X Camera Wrapper",
-         .author = "The XPerience Project",
+         .author = "The CyanogenMod Project",
          .methods = &camera_module_methods,
          .dso = NULL, /* remove compilation warnings */
-         .reserved = { 0 }, /* remove compilation warnings */
+         .reserved = {0}, /* remove compilation warnings */
     },
     .get_number_of_cameras = camera_get_number_of_cameras,
     .get_camera_info = camera_get_camera_info,
@@ -121,9 +112,6 @@ static char *camera_fixup_getparams(int id __attribute__((unused)),
     ALOGV("%s: fixed parameters:", __FUNCTION__);
     params.dump();
 #endif
-
-    params.set("longshot-supported", "false");
-    params.set("video-stabilization-supported", "false");
 
     android::String8 strParams = params.flatten();
     char *ret = strdup(strParams.string());
@@ -526,16 +514,9 @@ static int camera_device_open(const hw_module_t *module, const char *name,
         memset(camera_device, 0, sizeof(*camera_device));
         camera_device->id = cameraid;
 
-        int retries = OPEN_RETRIES;
-        bool retry;
-        do {
-            rv = gVendorModule->common.methods->open(
-                    (const hw_module_t*)gVendorModule, name,
-                    (hw_device_t**)&(camera_device->vendor));
-            retry = --retries > 0 && rv;
-            if (retry)
-                usleep(OPEN_RETRY_MSEC * 1000);
-        } while (retry);
+        rv = gVendorModule->common.methods->open(
+                (const hw_module_t*)gVendorModule, name,
+                (hw_device_t**)&(camera_device->vendor));
         if (rv) {
             ALOGE("vendor camera open fail");
             goto fail;
