@@ -76,6 +76,10 @@ TARGET_CAMERASERVICE_CLOSES_NATIVE_HANDLES := true
 TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
 MALLOC_SVELTE 						:= true
 
+ #Shim
+TARGET_LD_SHIM_LIBS := \
+    /system/lib/libmmcamera_frameproc.so|libcamera_shim_sensor
+
 # Display
 NUM_FRAMEBUFFER_SURFACE_BUFFERS     := 3
 TARGET_DISPLAY_USE_RETIRE_FENCE     := true
