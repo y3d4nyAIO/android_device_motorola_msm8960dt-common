@@ -107,7 +107,7 @@ PRODUCT_PACKAGES += \
     libshim_mdmcutback \
     libshim_qcopt \
     libshim_ril \
-    libshim_sensorlistener.so \
+    libshim_sensorlistener \
     libshims_thermal \
     libshims_graphicbuffer
 
@@ -220,3 +220,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     kernel/motorola/ghost/drivers/staging/prima_mmi/firmware_bin/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
     kernel/motorola/ghost/drivers/staging/prima_mmi/firmware_bin/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini
+
+# Widevine
+PRODUCT_PACKAGES += \
+    libwvm_shim
