@@ -56,7 +56,7 @@ TARGET_KERNEL_CONFIG       := msm8960dt_mmi_defconfig
 
 # Audio
 BOARD_USES_ALSA_AUDIO               := true
-USE_CUSTOM_AUDIO_POLICY             := 1
+USE_CUSTOM_AUDIO_POLICY             := o
 BOARD_USES_FLUENCE_INCALL           := true
 BOARD_USES_SEPERATED_AUDIO_INPUT    := true
 BOARD_USES_SEPERATED_VOICE_SPEAKER  := true

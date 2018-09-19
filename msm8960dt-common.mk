@@ -150,14 +150,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     charge_only_mode
 
-# NFC
-PRODUCT_PACKAGES += \
-    libnfc \
-    libnfc_jni \
-    nfc.msm8960 \
-    Nfc \
-    Tag \
-    com.android.nfc_extras
 
 ifeq ($(TARGET_BUILD_VARIANT),user)
     PRODUCT_COPY_FILES += $(LOCAL_PATH)/configs/nfcee_access.xml:system/etc/nfcee_access.xml
